@@ -28,8 +28,12 @@ let app = new Vue({
     methods: {
         addToCart() {
             this.cart += 1
+        },
+        decreaseCart() {
+            if (this.cart > 0) {
+                this.cart--;
+            }
         }
     }
-
 })
 
