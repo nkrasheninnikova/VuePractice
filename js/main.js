@@ -9,7 +9,7 @@ let app = new Vue({
         variants: [
             {
                 variantId: 2234,
-                variantColor: 'green'
+                variantColor: 'lime'
             },
             {
                 variantId: 2235,

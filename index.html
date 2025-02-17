@@ -23,13 +23,15 @@ initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
             <p v-if="inStock">In stock</p>
             <p v-else>Out of Stock</p>
             <ul>
+                <p style="font-size: 20px">Состав</p>
                 <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <div v-for="variant in variants" :key="variant.variantId">
+            <div v-for="variant in variants" :key="variant.variantId" class="variant" :style="{ backgroundColor: variant.variantColor }">
                 <p>{{ variant.variantColor }}</p>
             </div>
-
-            <li v-for="size in sizes">{{ size }}</li>
+            <ul>
+                <li v-for="size in sizes" >{{ size }}</li>
+            </ul>
         </div>
     </div>
 
