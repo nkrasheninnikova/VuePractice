@@ -16,7 +16,7 @@ Vue.component('product', {
             <p v-else :class="{ 'line-through': !inStock }">Out of Stock</p>
             <ul>
                 <p style="font-size: 20px">Состав</p>
-                <li v-for="detail in details">{{ detail }}</li>
+                <product-details></product-details>
             </ul>
             <p>Shipping: {{ shipping }}</p>
             <div v-for="(variant, index) in variants" :key="variant.variantId"
@@ -101,11 +101,21 @@ Vue.component('product', {
 })
 
 
+Vue.component('product-details', {
+    template: `
+        <ul>
+            <li v-for="detail in details" >{{ detail }}</li>
+        </ul>
+   `,
+    data() {
+        return {
+            details: ['80% cotton', '20% polyester', 'Gender-neutral']
+        }
+    }
+})
 let app = new Vue({
     el: '#app',
     data: {
         premium: true
     }
 })
-
-
