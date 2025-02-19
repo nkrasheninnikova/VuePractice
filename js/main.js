@@ -143,9 +143,9 @@ Vue.component('product-review', {
          </select>
       </p>
              <label for="recommend" >Would you recommend this product?</label><br>
-             <input type="radio" id="yes" name="recommend" value="yes">
+             <input type="radio" id="yes" name="recommend" value="yes"  :disabled="rating <= 2" v-model="recommend">
              <label for="yes" >Yes</label><br>
-             <input type="radio" id="no" name="recommend" value="no">
+             <input type="radio" id="no" name="recommend" value="no"  :disabled="rating >= 4" v-model="recommend">
              <label for="no" >No</label><br>
       <p>
         <input type="submit" value="Submit">
